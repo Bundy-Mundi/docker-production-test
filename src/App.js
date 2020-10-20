@@ -1,10 +1,10 @@
+// eslint-disable-next-line
 import React, { useState } from 'react';
-//import Nav from "./Components/Nav";
 import { AppBar, Toolbar, IconButton, Typography, Paper } from "@material-ui/core";
 import { Menu as MenuIcon } from "@material-ui/icons";
 
 function App() {
-  const [username, setUsername] = useState("Ananymous");
+  const [username] = useState("Ananymous");
   return (
     <div className="App">
       <header className="">
