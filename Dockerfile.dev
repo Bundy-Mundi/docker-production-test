@@ -1,0 +1,17 @@
+# Build Image
+## docker build -f Dockerfile.dev ./
+# Dev Environment
+## docker run -it -p 3000:3000 -v /usr/app/node_modules -v $(pwd):/usr/app react-app 
+FROM node:alpine
+
+WORKDIR /usr/app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+ENV CHOKIDAR_USEPOLLING=true
+
+CMD ["npm", "run", "start"]
