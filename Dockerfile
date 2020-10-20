@@ -11,7 +11,6 @@ COPY ./ ./
 
 RUN npm run build
 
-
 # Run Stage
 FROM nginx:latest
 # Copy the files created in the builder stage

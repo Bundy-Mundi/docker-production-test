@@ -14,4 +14,11 @@ services:
             # Map the local files with deployed files
             - ./:/usr/app
         stdin_open: true
-    
+    tests:
+        build:
+            context: ./
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /usr/app/node_modules
+            - ./:/usr/app
+        command: ["npm","run","test"]
