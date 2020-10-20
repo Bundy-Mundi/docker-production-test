@@ -1,0 +1,17 @@
+version: "3"
+services: 
+    react:
+        build: # Use dockerfile in the current directory
+            # location of the dockerfile
+            context: .
+            # same as '-f' option
+            dockerfile: Dockerfile.dev
+        ports: 
+            - "3000:3000"
+        volumes:
+            # Ignore this 
+            - /usr/app/node_modules
+            # Map the local files with deployed files
+            - ./:/usr/app
+        stdin_open: true
+    
