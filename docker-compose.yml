@@ -16,7 +16,7 @@ services:
         stdin_open: true
     tests:
         build:
-            context: ./
+            context: .
             dockerfile: Dockerfile.dev
         volumes:
             - /usr/app/node_modules
