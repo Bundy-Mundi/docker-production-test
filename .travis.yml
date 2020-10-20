@@ -9,7 +9,7 @@ before_install:
     - echo "Start Creating an image with dockerfile"
     - pwd
     - ls
-    - docker build -t exit21sb/react-app-dev -f ./Dockerfile.dev .
+    - docker build -t exit21sb/react-app-dev -f Dockerfile.dev .
 
 # Run Test
 script:
