@@ -15,10 +15,14 @@ services:
             - ./:/usr/app
         stdin_open: true
     tests:
-        build:
+        build: # Use dockerfile in the current directory
+        # location of the dockerfile
             context: .
+            # same as '-f' option
             dockerfile: Dockerfile.dev
         volumes:
+            # Ignore this 
             - /usr/app/node_modules
+            # Map the local files with deployed files
             - ./:/usr/app
-        command: ["npm","run","test"]
+        command: ["npm", "run", "test"]

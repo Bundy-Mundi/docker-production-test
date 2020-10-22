@@ -4,12 +4,6 @@ import App from './App';
 
 test('renders support us', () => {
   const { getByText } = render(<App />);
-  const text = getByText(/support/i);
-  expect(text).toBeInTheDocument();
-});
-
-test('renders support us', () => {
-  const { getByText } = render(<App />);
-  const text = getByText(/support/i);
-  expect(text).toBeInTheDocument();
+  const linkElement = getByText(/support/i);
+  expect(linkElement).toBeInTheDocument();
 });
