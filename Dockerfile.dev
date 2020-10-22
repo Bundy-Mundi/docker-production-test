@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 # Build Stage
 FROM node:alpine as builder
+=======
+# Build Image
+## docker build -f Dockerfile.dev ./
+# Dev Environment
+## docker run -it -p 3000:3000 -v /usr/app/node_modules -v $(pwd):/usr/app react-app 
+FROM node:alpine
+>>>>>>> c879e9c7cf9031bf6c94a777430df854eccbc4af
 
 WORKDIR /usr/app
 
@@ -9,4 +17,10 @@ RUN npm install
 
 COPY ./ ./
 
+<<<<<<< HEAD
 RUN npm run start
+=======
+ENV CHOKIDAR_USEPOLLING=true
+
+CMD ["npm", "run", "start"]
+>>>>>>> c879e9c7cf9031bf6c94a777430df854eccbc4af
