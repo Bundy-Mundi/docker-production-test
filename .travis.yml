@@ -9,13 +9,11 @@ before_install:
     - echo "Start Creating an image with dockerfile"
     - pwd
     - ls
-    - docker build -t exit21sb/react-app .
+    - docker build -t exit21sb/react-app -f Dockerfile.dev .
 
 # Run Test
 script:
-    - docker run -e -it CI=true exit21sb/react-app ls -- --coverage
-    - docker run -e -it CI=true exit21sb/react-app pwd -- --coverage
-    - docker run -e -it CI=true exit21sb/react-app npm run test -- --coverage
+    - docker run -e CI=true exit21sb/react-app npm run test -- --coverage
 
 # Send to hosting server later
 deploy:
