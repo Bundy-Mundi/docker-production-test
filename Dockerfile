@@ -13,6 +13,9 @@ RUN npm run build
 
 # Run Stage
 FROM nginx:latest
+
+EXPOSE 80
+
 # Copy the files created in the builder stage
 COPY --from=builder /usr/app/build /usr/share/nginx/html
 
